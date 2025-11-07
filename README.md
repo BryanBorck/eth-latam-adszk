@@ -42,6 +42,22 @@ eth-latam-adszk/
 bun install
 ```
 
+### Environment Variables
+
+**Client App (apps/client-example):**
+
+Copy the example environment file:
+```bash
+cd apps/client-example
+cp .env.example .env.local
+```
+
+Update `.env.local` with your Privy credentials:
+```
+NEXT_PUBLIC_PRIVY_APP_ID=your_privy_app_id
+NEXT_PUBLIC_PRIVY_CLIENT_ID=your_privy_client_id
+```
+
 ### Development
 
 Run all apps in development mode:
@@ -119,7 +135,7 @@ The template includes `FHECounter.sol` - a simple encrypted counter demonstratin
 - Encrypted arithmetic operations (`FHE.add`, `FHE.sub`)
 - Access control for encrypted data
 
-### Environment Variables
+### Hardhat Environment Variables
 
 Set up your Hardhat environment:
 ```bash
