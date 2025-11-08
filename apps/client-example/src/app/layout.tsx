@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
-import { Providers } from '@/components/providers/privy-provider'
+import { UserProvider } from '@/contexts/user-context'
+import { WalletProvider } from '@/contexts/wallet-context'
 
 export const metadata: Metadata = {
   title: 'Client Example',
@@ -13,9 +14,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Providers>{children}</Providers>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <WalletProvider>
+          <UserProvider>{children}</UserProvider>
+        </WalletProvider>
       </body>
     </html>
   )
